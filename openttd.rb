@@ -2,8 +2,8 @@ require 'formula'
 
 class Openttd < Formula
   homepage 'http://www.openttd.org/'
-  url 'http://binaries.openttd.org/releases/1.3.3/openttd-1.3.3-source.tar.gz'
-  sha1 'd04195d3e571fc00c7bb4e98df92ad6131b1f484'
+  url 'http://binaries.openttd.org/releases/1.4.1/openttd-1.4.1-source.tar.gz'
+  sha1 '3e4c88cd68a878ffcd723813c809fc42f24935c2'
 
   head 'git://git.openttd.org/openttd/trunk.git'
 
@@ -12,8 +12,8 @@ class Openttd < Formula
   depends_on 'pkg-config' => :build
 
   resource 'opengfx' do
-    url 'http://bundles.openttdcoop.org/opengfx/releases/0.4.7/opengfx-0.4.7.zip'
-    sha1 '401967470bd6f3f33180416f48a6a41a00fbeb29'
+    url 'http://bundles.openttdcoop.org/opengfx/releases/0.5.0/opengfx-0.5.0.zip'
+    sha1 '963e5e8052a286af269b2837cf3741c3d6c746eb'
   end
 
   resource 'opensfx' do
@@ -29,8 +29,6 @@ class Openttd < Formula
   def patches
     p = {
       :p0 => [
-        # Fixes a build issue on 10.9; already fixed upstream
-        'https://trac.macports.org/export/117147/trunk/dports/games/openttd/files/patch-src__video__cocoa__cocoa_v.mm-10_9.diff',
         # Ensures a deployment target is not set on 10.9;
         # TODO report this upstream
         'https://trac.macports.org/export/117147/trunk/dports/games/openttd/files/patch-config.lib-remove-deployment-target.diff'
